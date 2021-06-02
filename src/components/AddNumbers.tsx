@@ -21,11 +21,17 @@ const AddNumbers: FC = () => {
     setInputNumber(0)
   }
 
+  const reset = () => {
+    setNumbers([])
+    setInputNumber(0)
+  }
+
   return (
     <>
       <button onClick={decrement}>-1</button> {inputNumber}{""}
       <button onClick={increment}>+1</button> {""}
       <button onClick={addNumber}>追加</button>
+      <button onClick={reset}>リセット</button>
     </>
   )
 }

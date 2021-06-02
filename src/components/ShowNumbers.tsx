@@ -8,7 +8,7 @@ const ShowNumbers: FC = () => {
   return (
     <ul>
       {numbers.map((number) => {
-        return <li>{number}</li>
+        return <li>{number} <button>×</button></li>
       })}
     </ul>
   )
