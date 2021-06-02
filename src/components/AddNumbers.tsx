@@ -16,6 +16,12 @@ const AddNumbers: FC = () => {
 
   const addNumber = () => {
     setNumbers((oldNumbers) => {
+      if (oldNumbers.some((item) => inputNumber === item.number)) {
+        alert('同じ数値は登録できません')
+
+        return oldNumbers
+      }
+
       if (oldNumbers.length === 0) {
         return [{ number: inputNumber, id: 1 }]
       } else {
