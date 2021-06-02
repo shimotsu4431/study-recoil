@@ -12,7 +12,7 @@ const IncrementNumber: FC = () => {
   return (
     <div>
         <label htmlFor="incremental">incremental: </label>
-        <input id="incremental" type="number" value={number} onChange={handle} />
+        <input id="incremental" min={1} type="number" value={number} onChange={handle} />
       </div>
   )
 }

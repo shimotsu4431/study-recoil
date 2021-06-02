@@ -12,7 +12,7 @@ const DecrementNumber: FC = () => {
   return (
     <div>
         <label htmlFor="decremental">decremental: </label>
-        <input id="decremental" type="number" value={number} onChange={handle} />
+        <input id="decremental" max={-1} type="number" value={number} onChange={handle} />
       </div>
   )
 }
