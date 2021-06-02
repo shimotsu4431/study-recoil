@@ -9,9 +9,9 @@ export const filteredNumbersState = selector({
 
     switch (filter) {
       case "odd":
-        return numbers.filter((num) => num % 2 !== 0)
+        return numbers.filter((item) => item.number % 2 !== 0)
       case "even":
-        return numbers.filter((num) => num % 2 === 0)
+        return numbers.filter((item) => item.number % 2 === 0)
       default:
         return numbers
     }

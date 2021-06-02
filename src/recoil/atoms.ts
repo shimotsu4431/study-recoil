@@ -1,8 +1,13 @@
 import { atom } from "recoil"
 
+export type NumberItem = {
+  id: number,
+  number: number
+}
+
 export const numbersState = atom({
   key: "numbersState",
-  default: [] as number[],
+  default: [] as NumberItem[],
 })
 
 export const numbersFilterState = atom({

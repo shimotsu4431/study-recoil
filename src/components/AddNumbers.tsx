@@ -16,7 +16,11 @@ const AddNumbers: FC = () => {
 
   const addNumber = () => {
     setNumbers((oldNumbers) => {
-      return [...oldNumbers, inputNumber]
+      if (oldNumbers.length === 0) {
+        return [{ number: inputNumber, id: 1 }]
+      } else {
+        return [...oldNumbers, { number: inputNumber, id: oldNumbers[oldNumbers.length - 1].id + 1 }]
+      }
     })
     setInputNumber(0)
   }
