@@ -1,17 +1,19 @@
 import { FC, useState } from "react"
-import { useSetRecoilState } from "recoil"
-import { numbersState } from "../recoil/atoms"
+import { useRecoilValue, useSetRecoilState } from "recoil"
+import { decrementNumberState, incrementNumberState, numbersState } from "../recoil/atoms"
 
 const AddNumbers: FC = () => {
   const [inputNumber, setInputNumber] = useState(0)
+  const incrementalNumber = useRecoilValue(incrementNumberState)
+  const decrementalNumber = useRecoilValue(decrementNumberState)
   const setNumbers = useSetRecoilState(numbersState)
 
   const increment = () => {
-    setInputNumber((num) => num + 1)
+    setInputNumber((num) => num + incrementalNumber)
   }
 
   const decrement = () => {
-    setInputNumber((num) => num - 1)
+    setInputNumber((num) => num + decrementalNumber)
   }
 
   const addNumber = () => {
@@ -38,8 +40,8 @@ const AddNumbers: FC = () => {
 
   return (
     <>
-      <button onClick={decrement}>-1</button> {inputNumber}{""}
-      <button onClick={increment}>+1</button> {""}
+      <button onClick={decrement}>{decrementalNumber}</button> {inputNumber}{""}
+      <button onClick={increment}>{incrementalNumber}</button> {""}
       <button onClick={addNumber}>追加</button>
       <button onClick={reset}>リセット</button>
     </>

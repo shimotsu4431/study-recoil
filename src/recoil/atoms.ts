@@ -14,3 +14,13 @@ export const numbersFilterState = atom({
   key: "numbersFilterState",
   default: "all"
 })
+
+export const incrementNumberState = atom({
+  key: "incrementNumberState",
+  default: 1,
+})
+
+export const decrementNumberState = atom({
+  key: "decrementNumberState",
+  default: -1,
+})
